@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BankStatementCSVParser {
     private static final DateTimeFormatter DATE_PATTERN =
@@ -13,5 +15,13 @@ public class BankStatementCSVParser {
         final String description = columns[2];
 
         return new BankTransaction(date, amount, description);
+    }
+
+    public List<BankTransaction> parseLInesFromCSV(final List<String> lines){
+        final List<BankTransaction> bankTransactions = new ArrayList<>();
+        for (final String line: lines) {
+            bankTransactions.add(parseFromCSV(line));
+        }
+        return bankTransactions
     }
 }
