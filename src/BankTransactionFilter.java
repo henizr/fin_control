@@ -1,4 +1,4 @@
 @FunctionalInterface
 public interface BankTransactionFilter {
-    boolean test(BankTransaction bankTransaction);
+    public boolean test(BankTransaction bankTransaction);
 }
