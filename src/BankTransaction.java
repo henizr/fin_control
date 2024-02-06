@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.util.Objects;
 
+
 public class BankTransaction {
     private final LocalDate date;
     private final double amount;
